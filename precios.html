@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Precios de los videojuegos</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Título</th>
+        <th>Precio</th>
+    </tr>
+    {% for juego in juegos %}
+    <tr>
+        <td>{{ juego.titulo }}</td>
+        <td>₡{{ juego.precio }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

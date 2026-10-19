@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Editar videojuego</h2>
+
+<form action="/editar/{{ n }}" method="POST">
+    <p>Título: <input type="text" name="titulo" class="form-control" value="{{ juego.titulo }}" required></p>
+    <p>Plataforma: <input type="text" name="plataforma" class="form-control" value="{{ juego.plataforma }}" required></p>
+    <p>Precio: <input type="number" name="precio" class="form-control" value="{{ juego.precio }}" required></p>
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a href="/videojuegos" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Videojuegos disponibles</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Título</th>
+        <th>Plataforma</th>
+        <th>Acciones</th>
+    </tr>
+    {% for juego in juegos %}
+    <tr>
+        <td>{{ juego.titulo }}</td>
+        <td>{{ juego.plataforma }}</td>
+        <td>
+            <a href="/editar/{{ loop.index0 }}" class="btn btn-sm btn-primary">Editar</a>
+            <a href="/eliminar/{{ loop.index0 }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/registrar" class="btn btn-success">Registrar nuevo</a>
+{% endblock %}
